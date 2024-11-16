@@ -8,3 +8,23 @@
 // other get methods to access data that people might need.
 //  For example, people addressing a package or email may need a customer's name,
 //   but they definitely shouldn't have access to their SSN.
+
+function createPII() {
+    const PII = {
+        name: "Efren Laris",
+        SSN: "123-45-6789"
+    };
+    return {
+        getName() {
+            return PII.name;
+        }
+    };
+}
+
+const person = createPII();
+console.log(person.getName());
+console.log(person.SSN);
+console.log(person.PII);
+// console.log(person.SSN)
+// When consoled, name "Efren Laris" is returned successfully
+// Everything else is "undefined"
