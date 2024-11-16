@@ -5,3 +5,24 @@
 // a message like Today's exercise: running
 // Write one function that can dynamically print the value of the exercise for 
 // that day, and it must be closure.
+
+function createExerciseOfTheDay() {
+    let exercise = '';
+    function setExercise(exerciseName) {
+        exercise = exerciseName;
+    }
+    function printExercise() {
+        console.log(`Today's exercise is ${exercise}`);
+    } 
+    return {
+        setExercise, printExercise
+    }
+};
+
+const exerciseOfTheDay = createExerciseOfTheDay();
+exerciseOfTheDay.setExercise("running");
+exerciseOfTheDay.printExercise();
+exerciseOfTheDay.setExercise("push-ups");
+exerciseOfTheDay.printExercise();
+exerciseOfTheDay.setExercise("getting absolutely jacked");
+exerciseOfTheDay.printExercise();
